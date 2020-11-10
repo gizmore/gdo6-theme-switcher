@@ -1,0 +1,3 @@
+<?phpuse GDO\ThemeSwitcher\GDT_ThemeSwitcher;
+use GDO\ThemeSwitcher\GDO_Theme;use GDO\Form\GDT_Select;use GDO\UI\GDT_Divider;/** @var $field GDT_ThemeSwitcher **/
+?><?phpecho GDT_Divider::make()->label('gdo_theme')->renderCell();?><div class="gdo-theme-switcher"><?php$themes = GDO_Theme::table()->allCached();$sel = GDT_Select::make($field->name);$sel->choices($themes);$sel->initial(GDO_Theme::getDefinedTheme());echo $sel->renderCell();?></div>
