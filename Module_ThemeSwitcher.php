@@ -61,10 +61,11 @@ final class Module_ThemeSwitcher extends GDO_Module
         GDT_Page::$INSTANCE->topTabs->addField($tabs);
     }
 
-    public function hookLeftBar(GDT_Bar $bar)
+    public function onInitSidebar()
     {
         if ($this->cfgHookLeftBar())
         {
+            $bar = GDT_Page::$INSTANCE->leftNav;
             $bar->addField(GDT_ThemeSwitcher::make());
             $bar->addField(GDT_Divider::make());
         }
