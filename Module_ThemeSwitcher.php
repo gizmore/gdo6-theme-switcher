@@ -1,6 +1,7 @@
 <?php
 namespace GDO\ThemeSwitcher;
 
+use GDO\Core\Application;
 use GDO\Core\GDO_Module;
 use GDO\DB\GDT_Checkbox;
 use GDO\UI\GDT_Page;
@@ -51,14 +52,17 @@ final class Module_ThemeSwitcher extends GDO_Module
     
     public function renderAdminTabs()
     {
-        $tabs = GDT_Bar::make('theme_admin_tabs')->horizontal();
-        
-        $tabs->addFields([
-            GDT_Link::make('list_themes')->href($this->href('Themes')),
-            GDT_Link::make('add_theme')->href($this->href('Crud')),
-        ]);
-        
-        GDT_Page::$INSTANCE->topTabs->addField($tabs);
+        if (Application::instance()->isHTML())
+        {
+            $tabs = GDT_Bar::make('theme_admin_tabs')->horizontal();
+            
+            $tabs->addFields([
+                GDT_Link::make('list_themes')->href($this->href('Themes')),
+                GDT_Link::make('add_theme')->href($this->href('Crud')),
+            ]);
+            
+            GDT_Page::$INSTANCE->topTabs->addField($tabs);
+        }
     }
 
     public function onInitSidebar()
