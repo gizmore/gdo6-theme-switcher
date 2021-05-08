@@ -40,7 +40,7 @@ final class Module_ThemeSwitcher extends GDO_Module
         {
             GDO_Theme::blank([
                 'theme_name' => GDO_Theme::getDefinedTheme(),
-                'theme_chain' => GWF_THEMES,
+                'theme_chain' => GDO_THEMES,
             ])->insert();
         }
     }

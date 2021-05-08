@@ -24,7 +24,7 @@ final class GDO_Theme extends GDO
         {
             return $theme;
         }
-        return Strings::substrTo(GWF_THEMES, ',', GWF_THEMES);
+        return Strings::substrTo(GDO_THEMES, ',', GDO_THEMES);
     }
 
     ###########
