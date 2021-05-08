@@ -10,7 +10,7 @@ use GDO\Core\MethodAdmin;
  * List all theme switcher themes.
  * Very common and easy task to render a list out of a db.
  * @author gizmore
- * @version 6.10.1
+ * @version 6.10.3
  * @since 6.10.0
  */
 final class Themes extends MethodQueryList

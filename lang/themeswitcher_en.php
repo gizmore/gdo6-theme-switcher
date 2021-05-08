@@ -7,4 +7,5 @@ return [
 'theme_chain' => 'Theme Chain',
 'theme_li' => 'Name: %s; Chain: %s',
 'msg_switched_theme' => 'Switched your theme to %s.',
+'mdescr_themeswitcher_themes' => 'Switch theme on the fly for you',
 ];

@@ -12,8 +12,8 @@ use GDO\UI\GDT_Divider;
 /**
  * Adds a theme switcher widget as well as db stored themes.
  * @author gizmore
- * @version 6.10
- * @since 6.10
+ * @version 6.10.3
+ * @since 6.10.0
  */
 final class Module_ThemeSwitcher extends GDO_Module
 {
@@ -52,17 +52,12 @@ final class Module_ThemeSwitcher extends GDO_Module
     
     public function renderAdminTabs()
     {
-        if (Application::instance()->isHTML())
-        {
-            $tabs = GDT_Bar::make('theme_admin_tabs')->horizontal();
-            
-            $tabs->addFields([
-                GDT_Link::make('list_themes')->href($this->href('Themes')),
-                GDT_Link::make('add_theme')->href($this->href('Crud')),
-            ]);
-            
-            GDT_Page::$INSTANCE->topTabs->addField($tabs);
-        }
+        $tabs = GDT_Bar::make('theme_admin_tabs')->horizontal();
+        $tabs->addFields([
+            GDT_Link::make('list_themes')->href($this->href('Themes')),
+            GDT_Link::make('add_theme')->href($this->href('Crud')),
+        ]);
+        GDT_Page::$INSTANCE->topTabs->addField($tabs);
     }
 
     public function onInitSidebar()
