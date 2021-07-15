@@ -15,6 +15,8 @@ final class Set extends Method
 {
     public function saveLastUrl() { return false; }
     
+    public function isTrivial() { return false; }
+    
     public function gdoParameters()
     {
         return [
