@@ -47,7 +47,7 @@ final class Module_ThemeSwitcher extends GDO_Module
     
     public function onIncludeScripts()
     {
-        $this->addJavascript('js/gdo6-theme-switcher.js');
+        $this->addJS('js/gdo6-theme-switcher.js');
     }
     
     public function renderAdminTabs()
